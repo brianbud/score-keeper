@@ -27,6 +27,7 @@ for the styling:
 
 This is my first time using a CSS framework called Bulma.
 I used a Card component, changed the layout and got to learn more about grid layouts.
+I had to refactor some of the HTML code to match the Bulma format.
 
 ## Optimizations
 
