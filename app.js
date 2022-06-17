@@ -1,12 +1,17 @@
-const player1Btn = document.querySelector('#player1Button');
-const player2Btn = document.querySelector('#player2Button');
-const resetBtn = document.querySelector('#reset');
-const p1Display = document.querySelector('#player1Display');
-const p2Display = document.querySelector('#player2Display');
-const winningScoreSelect = document.querySelector('#playTo');
+const p1 = {
+  score: 0,
+  button: document.querySelector('#player1Button'),
+  display: document.querySelector('#player1Display'),
+};
 
-let p1Score = 0;
-let p2Score = 0;
+const p2 = {
+  score: 0,
+  button: document.querySelector('#player2Button'),
+  display: document.querySelector('#player2Display'),
+};
+
+const resetBtn = document.querySelector('#reset');
+const winningScoreSelect = document.querySelector('#playTo');
 let winningScore = 5;
 let isGameOver = false;
 
