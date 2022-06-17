@@ -15,32 +15,26 @@ const winningScoreSelect = document.querySelector('#playTo');
 let winningScore = 5;
 let isGameOver = false;
 
-player1Btn.addEventListener('click', function () {
+function updateScores(player, opponent) {
   if (!isGameOver) {
-    p1Score++;
-    if (p1Score === winningScore) {
+    player.score += 1;
+    if (player.score === winningScore) {
       isGameOver = true;
-      p1Display.classList.add('has-text-success');
-      p2Display.classList.add('has-text-danger');
-      player1Btn.disabled = true;
-      player2Btn.disabled = true;
+      player.display.classList.add('has-text-success');
+      opponent.display.classList.add('has-text-danger');
+      player.button.disabled = true;
+      opponent.button.disabled = true;
     }
-    p1Display.textContent = p1Score;
+    player.display.textContent = player.score;
   }
+}
+
+player1Btn.addEventListener('click', function () {
+  updateScores(p1, p2);
 });
 
 player2Btn.addEventListener('click', function () {
-  if (!isGameOver) {
-    p2Score++;
-    if (p2Score === winningScore) {
-      isGameOver = true;
-      p2Display.classList.add('has-text-success');
-      p1Display.classList.add('has-text-danger');
-      player1Btn.disabled = true;
-      player2Btn.disabled = true;
-    }
-    p2Display.textContent = p2Score;
-  }
+  updateScores(p2, p1);
 });
 
 winningScoreSelect.addEventListener('change', function () {
