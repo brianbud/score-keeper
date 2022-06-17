@@ -12,7 +12,7 @@ const p2 = {
 
 const resetBtn = document.querySelector('#reset');
 const winningScoreSelect = document.querySelector('#playTo');
-let winningScore = 5;
+let winningScore = 3;
 let isGameOver = false;
 
 function updateScores(player, opponent) {
